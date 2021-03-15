@@ -87,22 +87,22 @@ const WbnPlayer = ({ match, history, location }) => {
 
     const progressCallback = e => {
         if (e.playedSeconds > 10 && e.playedSeconds < 11) {
-            const videos = [...state.videos];
-            const playedVideo = videos.find(
-                video => video.id === state.activeVideo.id,
-            );
-            playedVideo.played = true;
+            // const videos = [...state.videos];
+            // const playedVideo = videos.find(
+            //     video => video.id === state.activeVideo.id,
+            // );
+            // playedVideo.played = true;
 
-            setState(prevState => ({ ...prevState, videos }));
+            // setState(prevState => ({ ...prevState, videos }));
 
-            // setState({
-            //   ...state,
-            //   videos: state.videos.map( element => {
-            //     return element.id === state.activeVideo.id
-            //     ? { ...element, played: true }
-            //     : element;
-            //   })
-            // });
+            setState({
+                ...state,
+                videos: state.videos.map(element => {
+                    return element.id === state.activeVideo.id
+                        ? { ...element, played: true }
+                        : element;
+                })
+            });
         }
     };
 
