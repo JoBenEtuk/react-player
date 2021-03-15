@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledWbnPlayer = styled.div`
+const StyledVidPlayer = styled.div`
   background: ${props => props.theme.bgcolor}; /* #353535; */
   border: ${props => props.theme.border};
   max-width: 1800px;
@@ -14,8 +14,9 @@ const StyledWbnPlayer = styled.div`
 
   @media screen and (max-width: 1400px) {
     display: block;
+  min-height: 100vh;
     max-height: 10000px;
   }
 `;
 
-export default StyledWbnPlayer;
+export default StyledVidPlayer;

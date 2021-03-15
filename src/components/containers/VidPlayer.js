@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Video from '../Video';
-import Playlist from '../containers/Playlist';
-import StyledWbnPlayer from '../styles/StyledWbnPlayer';
+import Playlist from './Playlist';
+import StyledVidPlayer from '../styles/StyledVidPlayer';
 
 const theme = {
     bgcolor: '#353535',
@@ -24,7 +24,7 @@ const themeLight = {
     color: '#353535',
 };
 
-const WbnPlayer = ({ match, history, location }) => {
+const VidPlayer = ({ match, history, location }) => {
     const videos = JSON.parse(document.querySelector('[name="videos"]').value);
     const savedState = JSON.parse(localStorage.getItem(`${videos.playlistId}`));
     const [state, setState] = useState({
@@ -109,7 +109,7 @@ const WbnPlayer = ({ match, history, location }) => {
     return (
         <ThemeProvider theme={state.nightMode ? theme : themeLight}>
             {state.videos !== null ? (
-                <StyledWbnPlayer>
+                <StyledVidPlayer>
                     <Video
                         active={state.activeVideo}
                         autoplay={state.autoplay}
@@ -122,10 +122,10 @@ const WbnPlayer = ({ match, history, location }) => {
                         nightModeCallback={nightModeCallback}
                         nightMode={state.nightMode}
                     />
-                </StyledWbnPlayer>
+                </StyledVidPlayer>
             ) : null}
         </ThemeProvider>
     )
 }
 
-export default WbnPlayer;
+export default VidPlayer;
