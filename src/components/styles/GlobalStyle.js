@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-size: 10px;
+    margin: 0;
     font-family: 'Hind', sans-serif;
   }
 `;

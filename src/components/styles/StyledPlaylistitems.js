@@ -26,6 +26,10 @@ const StyledPlaylistitems = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+  @media screen and (max-width: 1400px) {
+    height: auto;
+  }
 `;
 
 export default StyledPlaylistitems;
